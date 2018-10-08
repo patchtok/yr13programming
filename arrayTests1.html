@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title> Array Tests </title>
+	<style>
+		body{
+			background-color: antiquewhite;
+		}
+		canvas{
+			background-color: white;
+
+		}
+		div{
+			width:800px;
+			margin: auto;
+			padding: 0;
+		}
+		
+	</style>
+
+
+
+</head>
+
+<body>
+	<div id="myD"></div>
+	<script>
+	// clear and array
+	var myArray = ["Alice", "Bob", "Charlotte", "Denise", "Eleanor", "Francesca"];
+		print("myD", myArray +" , "+ myArray.length);
+
+		//document.getElementById("myD").innerHTML += myArray + " , "+myArray.length + "<br>";
+		// swap
+		swap(0,1, myArray);
+		print("myD", myArray +" , "+ myArray.length);
+		// remove element from an array
+		remove(1,myArray);
+		print("myD", myArray +" , "+ myArray.length);
+		removeName("Eleanor", myArray);
+		print("myD", myArray +" , "+ myArray.length);
+		// clear
+		myArray = []
+		print("myD", myArray +" , "+ myArray.length);
+		
+		
+		
+	function print(id, m){
+		document.getElementById(id).innerHTML+=m+"<br>";
+	}
+		
+	function swap(i_1,i_2, A){
+		var temp = A[i_1];
+		A[i_1]=A[i_2];
+		A[i_2]=temp;
+		
+	}
+		
+	function remove(i, A){
+		A.splice(i,1);
+		
+	}
+	
+	function removeName(n, A){
+		for( i =0 ; i< A.length; i++){
+			
+			if(A[i] == n){
+				remove(i,A);
+			}
+			
+		}
+		
+	}
+	
+		
+	</script>
+
+	
+
+
+	
+
+
+
+</body>
+</html>

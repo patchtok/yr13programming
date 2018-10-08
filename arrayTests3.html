@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title> Array Tests 3</title>
+	<style>
+		body{
+			background-color: antiquewhite;
+		}
+		canvas{
+			background-color: white;
+
+		}
+		div{
+			width:800px;
+			margin: auto;
+			padding: 0;
+		}
+		
+	</style>
+
+
+
+</head>
+
+<body>
+	<div id="myD"></div>
+	<script>
+	// clear and array
+	var myArray = [];
+	var one = false;
+	var two = false;
+	var three = false;
+	var booleanSet = [one, two, three];
+		
+
+		
+		
+		
+	function print(id,A){
+		var my_string = "";
+		for(i = 0 ; i<A.length; i++){
+			my_string += A[i].name +",";
+		}
+		
+		document.getElementById(id).innerHTML+=my_string+","+A.length+"<br>";
+	}
+		
+	function swap(i_1,i_2, A){
+		var temp = A[i_1];
+		A[i_1]=A[i_2];
+		A[i_2]=temp;
+		
+	}
+		
+	function remove(i, A){
+		A.splice(i,1);
+		
+	}
+	
+	function removeName(n, A){
+		for( i =0 ; i< A.length; i++){
+			if(A[i].name == n){
+				remove(i,A);
+			}	
+		}
+	}
+		
+	class Obj{
+		
+		constructor(x,y, name){
+			this.x = x;
+			this.y = y;
+			this.name = name
+		}
+		
+		modify(){
+			
+			for(i =0 ; i< booleanSet.length; i++){
+				booleanSet[1] = true;
+				document.getElementById("myD").innerHTML += booleanSet[i] +"<br>";
+			}
+			
+			
+		}
+		
+		update(){
+			print("myD", myArray);	
+			swap(0,1, myArray);
+			print("myD", myArray);
+			// remove element from an array
+			remove(1,myArray);
+			print("myD", myArray);
+			removeName("Eleanor", myArray);
+			print("myD", myArray);
+			// clear
+			myArray = []
+			print("myD", myArray);
+		}
+		
+	}
+	
+	var a = new Obj(4,5, "Alice");
+	var b = new Obj(4,5, "Bob");
+	var c = new Obj(4,5, "Charlotte");
+	var d = new Obj(4,5, "Denise");
+	var e = new Obj(4,5, "Eleanor");
+	var f = new Obj(4,5, "Francesca");
+	myArray = [a,b,c,d,e,f];
+	//print("myD", myArray);
+	//a.update();
+	print("myD", myArray);
+		a.modify();
+	document.getElementById("myD").innerHTML+=booleanSet+"<br>";
+	document.getElementById("myD").innerHTML+=one+","+two+","+three;
+	
+	
+
+		
+		
+	</script>
+
+	
+
+
+	
+
+
+
+</body>
+</html>
